@@ -15,6 +15,8 @@ function add() {
     console.log(name)
 
     window.localStorage.setItem('saved', JSON.stringify(data))
+
+    render();
 }
 
 function save() {
