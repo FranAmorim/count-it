@@ -13,15 +13,18 @@ let DELETE_ITEM;
 
 function add() {
     const name = document.getElementById('name')
-    data.push({
-        id: uniqueId(),
-        name: name.value,
-        count: 0,
-    })
-
-    render();
-    window.localStorage.setItem('saved', JSON.stringify(data))
-
+    if (name.value !== '') {
+        data.push({
+            id: uniqueId(),
+            name: name.value,
+            count: 0,
+        })
+    
+        name.value = '';
+    
+        render();
+        window.localStorage.setItem('saved', JSON.stringify(data))
+    }
 }
 
 function save() {
@@ -36,7 +39,9 @@ function render() {
         const minusBtn = document.createElement('button');
         minusBtn.textContent = '-';
         minusBtn.onclick = () => {
-            item.count -= 1;
+            if (item.count > 0) {
+                item.count -= 1;
+            }
             save()
             render()
         }
