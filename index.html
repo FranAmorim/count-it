@@ -9,12 +9,18 @@
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     >
     <style>
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
         .list-element {
             
-            display: grid;
+            /* display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
-            align-items: center;
+            align-items: center; */
             /* justify-content: center; */
         }
 
@@ -27,6 +33,8 @@
             text-transform: capitalize;
             width: 100px;
         }
+
+        
 
         /* 
         button {
@@ -48,6 +56,22 @@
 
     </div>
     
+    <dialog id="modal">
+        <article>
+          <header>
+            <button aria-label="Close" rel="prev" onclick="closeModal()"></button>
+            <p>
+              <strong>🗑️ Deseja mesmo apagar?</strong>
+            </p>
+          </header>
+          <div style="display: flex; justify-content: space-between;">
+            
+          <button  class="outline" onclick="apagarItem()"> Sim </button>
+          <button  class="outline" onclick="closeModal()"> Não </button>
+          </div>
+        </article>
+    </dialog>
+
     <script src="main.js"></script>
-</body>
+    
 </html>
