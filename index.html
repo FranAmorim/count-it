@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+    <style>
+        .list-element {
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .list-element p {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-transform: capitalize;
+            width: 100px;
+        }
+
+        /* 
+        button {
+            width: 35px;
+            height: 35px;
+        } */
+    </style>
+</head>
+<body>
+    
+    <article>
+        <fieldset role="group">
+            <input id="name" type="text"/>
+            <button type="button" onclick="add()"> Add </button>
+        </fieldset>
+    </article>
+
+    <div id="ctn">
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
